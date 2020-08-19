@@ -5,22 +5,52 @@ var strings = ["this", "is", "a", "collection", "of", "words"];
 // Use the above two arrays and practice array methods
 
 // Find largest number in numbers
-
+var max = 0;
+numbers.forEach(function(largest) {
+    if (max < largest)
+        max = largest;
+})
+console.log(max);
 // Find longest string in strings
-
+var long = "";
+strings.forEach(function(longest) {
+    if (long.length < longest.length)
+        long = longest;
+})
+console.log(long);
 // Find all the even numbers
-
-// Find all the odd numbers
-
-// Find all the words that contain 'is' use string method 'includes'
-
-// Find all the words that contain 'is' use string method 'indexOf'
-
-// Check if all the numbers in numbers array are divisible by three use array method (every)
-
+numbers.forEach(function(num) {
+        if (num % 2 == 0)
+            console.log(num)
+    })
+    // Find all the odd numbers
+numbers.forEach(function(num) {
+        if (num % 2 !== 0)
+            console.log(num)
+    })
+    // Find all the words that contain 'is' use string method 'includes'
+strings.forEach(function(word) {
+        if (word.includes("is"))
+            console.log(word)
+    })
+    // Find all the words that contain 'is' use string method 'indexOf'
+strings.forEach(function(word) {
+        if (word.indexOf("is") != -1)
+            console.log(word)
+    })
+    // Check if all the numbers in numbers array are divisible by three use array method (every)
+var numbers = [1, 12, 4, 18, 9, 7, 11, 3, 101, 5, 6];
+var div = numbers.filter(div => div % 3 == 0);
+div;
+//(5) [12, 18, 9, 3, 6]
 //  Sort Array from smallest to largest
-
-// Remove the last word in strings
+function ascending(a, b) {
+    return a - b;
+}
+numbers.sort(ascending);
+console.log(numbers);
+VM54: 6(11) [1, 3, 4, 5, 6, 7, 9, 11, 12, 18, 101]
+    // Remove the last word in strings
 
 // Add a new word in the array
 
@@ -38,10 +68,10 @@ var strings = ["this", "is", "a", "collection", "of", "words"];
 
 // Customers Array
 var customers = [
-  { firstname: "Joe", lastname: "Blogs" },
-  { firstname: "John", lastname: "Smith" },
-  { firstname: "Dave", lastname: "Jones" },
-  { firstname: "Jack", lastname: "White" }
+    { firstname: "Joe", lastname: "Blogs" },
+    { firstname: "John", lastname: "Smith" },
+    { firstname: "Dave", lastname: "Jones" },
+    { firstname: "Jack", lastname: "White" }
 ];
 // Find all customers whose firstname starts with 'J'
 
