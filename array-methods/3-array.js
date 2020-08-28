@@ -15,8 +15,12 @@ var words = [
 function uniqueArray(data) {
     return data.reduce((acc, curr) => acc.includes(curr) ? acc : [...acc, curr], [])
 }
-console.log(uniqueArray(words))
-    // Write a function uniqueArray that receives an array of words as a parameter. And remove the duplicates, and return a new array. 
+console.log(uniqueArray(words));
+// Write a function uniqueArray that receives an array of words as a parameter. And remove the duplicates, and return a new array.
+function uniqueArr(elem) {
+    return elem.filter((value, index) => elem.indexOf(value) === index);
+}
+console.log(uniqueArr(words))
     // (indexOf)
 
 
@@ -32,8 +36,19 @@ var words2 = [
     'disobedience'
 ];
 
+function doesWordExist(value, array) {
+    return array.indexOf(value) > -1;
+}
+doesWordExist("eating", words2)
+    //or
+function doesWordExist(data, elem) {
+    if (data.includes(elem))
+        console.log(true);
+    else
+        console.log(false);
+}
+doesWordExist(words2, "eating");
 // Write a function doesWordExist that will take in an array of words as one argument, and a word to search for as the other. Return true if it exists, otherwise, return false. Don't use indexOf for this one.
-
 
 
 
@@ -51,7 +66,12 @@ var words3 = [
     'matter'
 ];
 
-
+function howManyTimes(array, value) {
+    var count = 0;
+    array.forEach((v) => (v === value && count++));
+    return count;
+}
+howManyTimes(words3, 'matter');
 // Write a function howManyTimes that will take in an array of words as one argument, and a word to search for as the other. The function will return the number of times that word appears in the array.
 
 
@@ -76,7 +96,12 @@ let data = [{
         pop: 263991379,
     }
 ]
+let initialValue = -(data[0].pop);
+let sum = data.reduce(function(accumulator, currentValue) {
+    return accumulator + currentValue.pop
+}, initialValue)
 
+console.log(sum)
 
 // Use reduce method and summorize the collection like
 // { banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1 }
@@ -93,7 +118,6 @@ const fruitBasket = [
     'orange',
     'fig'
 ];
-
 
 
 // Bonus Question (Solve only if you have time)
